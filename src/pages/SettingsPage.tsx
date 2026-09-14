@@ -141,7 +141,7 @@ export function SettingsPage() {
         <Panel title="About">
           <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             <dt className="text-slate-400 dark:text-slate-500">Version</dt>
-            <dd className="font-medium text-slate-700 dark:text-slate-200">1.0.0</dd>
+            <dd className="font-medium text-slate-700 dark:text-slate-200">1.0.1</dd>
             <dt className="text-slate-400 dark:text-slate-500">Stack</dt>
             <dd className="font-medium text-slate-700 dark:text-slate-200">React 18 · TypeScript · Vite · Tailwind</dd>
             <dt className="text-slate-400 dark:text-slate-500">QR engine</dt>
