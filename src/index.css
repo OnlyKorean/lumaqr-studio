@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-brand-violet/30;
+  }
+}
+
+@layer components {
+  /* Transparent-background checkerboard (proof the alpha is real). */
+  .checkerboard {
+    background-image: conic-gradient(#e2e8f0 0 25%, #f8fafc 0 50%, #e2e8f0 0 75%, #f8fafc 0);
+    background-size: 20px 20px;
+  }
+  .dark .checkerboard {
+    background-image: conic-gradient(#1b2447 0 25%, #0f1529 0 50%, #1b2447 0 75%, #0f1529 0);
+    background-size: 20px 20px;
+  }
+
+  /* Range inputs */
+  .luma-range {
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-black/10 dark:bg-white/15;
+  }
+  .luma-range:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+  .luma-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #7c3aed, #22d3ee);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(11, 16, 32, 0.35);
+    transition: transform 120ms ease;
+  }
+  .luma-range::-webkit-slider-thumb:hover {
+    transform: scale(1.12);
+  }
+  .luma-range::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #7c3aed, #22d3ee);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(11, 16, 32, 0.35);
+  }
+  .luma-range:focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 4px;
+  }
+}
+
+/* Thin, quiet scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 58, 237, 0.35) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.35);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
