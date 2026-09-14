@@ -22,6 +22,36 @@ LumaQR Studio is a premium, fully client-side QR design platform for creators, r
 
 ---
 
+## Repository Status
+
+**Complete.** The tagged source snapshot is `v1.0.1` — **67 tracked files**, all committed and pushed:
+
+```text
+ 6  root config     index.html · package.json · package-lock.json · tsconfig(.node).json
+                    vite.config.ts · tailwind.config.js · postcss.config.js · .gitignore · LICENSE
+ 1  README.md
+ 1  public/         favicon.svg
+ 2  scripts/        smoke.ts · decode-roundtrip.ts
+53  src/            App · main · index.css · components/{creator,layout,ui} · hooks · lib
+                    pages · store · types
+```
+
+Verification log (reproducible on a clean clone):
+
+```bash
+npm ci            # 186 packages
+npm run build     # tsc -b && vite build → 492 kB JS / 48 kB CSS, 0 TS errors
+npm run smoke     # ALL PASS — 31 passed, 0 failed  (+ 43 headless unit checks)
+```
+
+Nothing is generated at build time that is missing from the repo: every source, script, config and
+asset file lives in Git, and `dist/` + `node_modules/` are intentionally ignored.
+
+> **Uzbekcha:** Repozitoriy to‘liq — 67 faylning barchasi commit qilingan va GitHub’da. Build va
+> smoke testlar toza o‘tadi. Yuklab olish uchun `git clone` yoki *Code → Download ZIP* ishlating.
+
+---
+
 ## Features
 
 ### Content (8 real types, validated as you type)

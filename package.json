@@ -2,7 +2,7 @@
   "name": "lumaqr-studio",
   "description": "Premium QR design studio — branded, scan-safe QR codes, 100% in your browser",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
