@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>LumaQR Studio — Beautiful, scan-safe QR codes</title>
+    <meta
+      name="description"
+      content="Create beautiful, branded and scan-ready QR codes for URLs, text, Wi-Fi, vCards, events and more — with moods, brand kits, a real scanability score and PNG/SVG export. 100% in your browser."
+    />
+    <meta name="theme-color" content="#0B1020" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LumaQR Studio — Make it scan. Make it yours." />
+    <meta
+      property="og:description"
+      content="Premium QR design platform: 8 content types, QR moods, smart brand mode, real scan testing and instant export. Your content never leaves the browser."
+    />
+    <meta property="og:site_name" content="LumaQR Studio" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="/" />
+    <script>
+      // Apply persisted theme before first paint (default: dark).
+      try {
+        var t = localStorage.getItem('lumaqr.theme.v1');
+        if (t && t.indexOf('light') !== -1) document.documentElement.classList.remove('dark');
+      } catch (e) {
+        /* default dark */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
